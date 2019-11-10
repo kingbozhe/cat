@@ -6,6 +6,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class Welcome {
 
     @ResponseBody
     @RequestMapping(value = "/welcome")
-    String welcome(String userId){
+    String welcome(@RequestParam(value = "userid") String userId){
         UserInfo userInfo = userService.getUserById(userId);
         JSONObject json = JSONObject.fromObject(userInfo);
         return json.toString();

@@ -5,13 +5,13 @@
 <mapper namespace="com.bozhongqun.cat.mapper.UserMapper">
 
     <resultMap id="user" type="com.bozhongqun.cat.entity.UserInfo">
-        <result column="userId" jdbcType="INTEGER" property="USERID"/>
-        <result column="userName" jdbcType="VARCHAR" property="USERNAME"/>
-        <result column="pwd" jdbcType="VARCHAR" property="PWD"/>
-        <result column="createTime" jdbcType="VARCHAR" property="CREATETIME"/>
+        <result column="USERID" jdbcType="VARCHAR" property="userId"/>
+        <result column="USERNAME" jdbcType="VARCHAR" property="userName"/>
+        <result column="PWD" jdbcType="VARCHAR" property="pwd"/>
+        <result column="CREATETIME" jdbcType="VARCHAR" property="createTime"/>
     </resultMap>
 
-    <select id="getUserById" resultType="com.bozhongqun.cat.entity.UserInfo">
+    <select id="getUserById" resultMap="user">
         SELECT USERID
                ,USERNAME
                ,PWD
