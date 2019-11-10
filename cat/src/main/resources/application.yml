@@ -6,7 +6,7 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/PLAYCAT?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/PLAYCAT?serverTimezone=UTC&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -25,5 +25,5 @@ spring:
 
 #公共配置与profiles选择无关
 mybatis:
-  typeAliasesPackage: com.bozhongqun.cat.entity
+  #typeAliasesPackage: com.bozhongqun.cat.entity
   mapperLocations: classpath:mapping/*.xml
